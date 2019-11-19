@@ -4,6 +4,7 @@ var mongoose = require("mongoose");
 var campgroundSchema = new mongoose.Schema({
     name: String,
     price :String,
+    workout_date: { type: Date, default: Date.now },
     image: String,
     description: String,
     author: {
@@ -15,7 +16,7 @@ var campgroundSchema = new mongoose.Schema({
     },
     comments: [
         {
-             type: mongoose.Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: "Comment"
         }]
 });

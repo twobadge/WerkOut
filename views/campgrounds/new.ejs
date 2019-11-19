@@ -1,29 +1,49 @@
 <% include ../partials/header%>
 
-    <div class="container">
-      <div class="row">
-        <h1 style="text-align:center;">Create new campground</h1>
-        <div style="width:30%;margin:25px auto;">
-        <form action="/campgrounds" method="POST">
-            <div class="form-group">
-            <input class="form-control" name="name" type="text" placeholder="name">
-            </div>
-            <div class="form-group">
-            <input class="form-control" name="price" type="number" placeholder="price" min="0.01" step="0.01">
-            </div>
-            <div class="form-group">
-            <input  class="form-control" name="image" type="text" placeholder="image url*">
-            </div>
-            <div class="form-group">
-            <input  class="form-control" name="description" type="text" placeholder="description">
-            </div>
-            <div class="form-group">
-            <button class="btn-lg btn-primary btn-block">Submit</button>
-            </div>
-        </form>
-        <a href="/campgrounds">Go Back</a>
-        </div>
+
+<div class="container content">
+    <div class="row headline-row">
+      <div class="col-6">
+        <h4>Create Workout</h4>
+      </div>
+          <div class="col-6">
+              <button class="move-right dark-blue-button">+ New Routine</button>
+          </div>
+   
+    </div>
+    <form action="/campgrounds" method="POST">
+    <div class="row table-head">
+      <div class="col-12">
+        <p>Select Routine</p>
+      </div>
+  
+    </div>
+    <div class="row slice">
+      
+      <div class="col-12">
+       <select id="routine_name" name="name">
+          <option value="" disabled selected>Select your routine</option>
+         <option name="name" value="Chest">Chest</option>
+         <option name="name" value="Back">Back</option>
+         <option name="name" value="Shoulders">Shoulders</option>
+         <option name="name" value="Legs">Legs</option>
+         <option name="name" value="Abs">Abs</option>
+         <option name="name" value="Free Workout">Free workout</option>
+        </select>
+
+    </div>
+     
+    
+  </div>
+    <div class="row headline-row">
+      <div class="col-6">
+          <a href="/campgrounds"><i class="fas fa-hand-point-left"></i></a>
+      </div>
+      <div class="col-6">
+        <button class="move-right light-blue-button">Go</button>
       </div>
     </div>
+    </form>
+</div>
 
 <% include ../partials/footer%>

@@ -13,12 +13,12 @@ var express = require("express"),
 //requiring routes    
 var  commentRoutes = require("./routes/comments"),
      campgroundRoutes = require("./routes/campgrounds"),
+     exerciseRoutes = require("./routes/exercises"),
      indexRoutes     =require ("./routes/index")
 
 //environment variables
-
-mongoose.connect(process.env.DATABASEURL);    
-// mongoose.connect("mongodb+srv://Thomas:Mnni07473847335@cluster0-wcume.mongodb.net/yelp_camp?retryWrites=true");
+var url = process.env.DATABASEURL || "mongodb://localhost/werk_out"
+mongoose.connect(url);    
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
@@ -27,9 +27,11 @@ app.use(methodOverride("_method"));
 app.use(flash());
 //Seed the database //seedDB();
 
+
+
 //Passport Config
 app.use(require("express-session")({
-    secret: "Once again Rusty wins cutest dog!",
+    secret: "Werk Out is the best way to workout",
     resave: false,
     saveUninitialized: false
 }));
@@ -46,14 +48,24 @@ app.use(function(req, res, next){
     next();
 });
 
+
+
 //Use the routes
 
 app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/exercises", exerciseRoutes);
 
 
 //start server
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("YelpCamp has started");
-});
+// app.listen(process.env.PORT, process.env.IP, function(){
+//     console.log("YelpCamp has started");
+// });
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))

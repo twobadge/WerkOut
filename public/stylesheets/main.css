@@ -1,19 +1,247 @@
 body {
-    background-color:#ededed;
+    font-family:Karla, Sans-Serif;
+    background-color: #EDF2F6;
+    color:#363B41;
+  }
+
+h4 {
+  font-weight:bold;
+}
+  
+  p {
+    margin:0px;
+  }
+
+  a {
+      text-decoration: none!important;
+      color:#363B41!important;
+  }
+
+  li {
+      list-style-type: none;
+  }
+  
+  .move-right {
+    float:right;
+  }
+
+  img {
+      max-width: 100%;
+  }
+  
+  
+  header {
+    padding:10px;
+    background-color:#2E3748;
+    color:#ffffff;
+    font-family:'Raleway', sans-serif;
+    letter-spacing: 2px;
+  }
+
+  #sign-in-icon {
+      color:red;
+  }
+
+
+  .exercise-names {
+      font-weight: bold;
+  }
+  
+  .headline-row {
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+  
+  /* Components */
+  
+  .fa-ellipsis-v {
+    color:lightgrey;
+  }
+
+  .fa-hand-point-left {
+    font-size:25px;
+  }
+
+  .fa-hand-point-left:hover {
+      color:lightblue;
+  }
+
+  .fa-trash-alt {
+      font-size:1.2em;
+  }
+
+  .fa-trash-alt:hover {
+      color:red;
+      cursor: pointer;
+  }
+
+.fa-times-circle {
+  color:lightgrey;
+}
+tr :hover > .fa-times-circle {
+  color:red;
+  
+}
+  
+  button {
+    border:none;
+    border-radius:4px;
+    padding: 4px 7px 4px 7px;
+    min-width:80px;
+  }
+
+  button:hover {
+      cursor: pointer;
+      opacity: 0.7;
+  }
+  
+  .dark-blue-button {
+    background-color: #2E3748;
+    color: #ffffff;
+  }
+  
+  .light-blue-button {
+    background-color:#53A1DC;
+    color:#ffffff;
+  }
+  
+
+  .delete-button {
+    border:none;
+    border-radius:4px;
+    padding: 4px 7px 4px 7px;
+    min-width:50px;
+    background-color:#EBA7B5;
+    color:rgb(170, 60, 60);
+    font-weight: bold;
+  }
+
+
+  .delete-button :hover {
+      opacity: 0.7;
+  }
+  
+  /* table styling */
+
+table {
+  background-color:#ffffff;
+  width:100%!important;
 }
 
-.thumbnail img {
+table tr {
+  border:0.1px solid #ededed;
+}
+
+tr:hover {
+  background-color:#F6FAFB;
+}
+
+/* th {
+  width:33.3%
+} */
+
+table th, td {
+	padding:0.5rem!important;
+}
+
+
+
+  
+  .table-head {
+    text-transform:uppercase;
+    background-color:#F6FAFB;
+    font-weight:bold;
+    color:#BCC3CB;
+  }
+  
+  .workout-row {
+      margin-top:10px;
+  }
+  
+  .workout-slice, .slice {
+    background-color:#ffffff;
+  }
+
+  .workout-slice:hover {
+      background-color:#F6FAFB;
+  }
+  
+  .slice, .table-head {
+     border:0.1px solid #ededed;
+     padding:10px 10px 10px 0px;
+  }
+  
+
+  /* Dropdown styles */
+/* Extended icon to keep dropdown list of screen */
+/* .drop-list {
+    width:100px;
+  } */
+  
+  /* .drop-item {
+    list-style-type: none;
+    padding:5px 10px 5px 10px;
+  } */
+  /* .drop-item:hover{
+    background-color:#212944;
+    color:#ffffff;
+  }
+  
+  .dropdown-data {
+    display:none;
+    background-color:rgb(255, 255, 255);
+    text-align: left;
+    box-shadow: 0 1px 5px 0 rgba(45, 62, 80, .12);
+    border-radius:4px;
+  }
+  
+  .dropdown-list:hover > .dropdown-data {
+    display:block;
+    position: absolute;
+    z-index: 1000000;
+  }
+  
+  .dropdown-list:hover {
+    cursor:pointer;
+  } */
+  
+
+  /* media queries */
+  
+  @media screen and (max-width: 600px) {
+    .content {
+      font-size:12px;
+      padding:0% 5% 0% 5%;
+    }
+  }
+  
+  @media screen and (max-width: 380px) {
+    .edit {
+    display:none;
+    }
+  }
+
+
+  /* Form styles */
+
+input, textarea, select {
+    display:block;
+    /* margin:0rem 0rem 1rem 0rem; */
+    background-color:#F5F8FA;
+    outline:0;
+    border:1px solid lightgrey;
+    padding:5px;
     width:100%;
-}
+    color:#263443;
+  }
+  label {
+    margin-bottom:0px;
+    font-size:0.8rem;
+  }
 
-.thumbnail {
-    padding:0px;
-}
 
-.thumbnail .caption-full {
-    padding:9px;
-}
-
-#delete-form {
-    display:inline;
-}
+  .exercise-input {
+      border:none;
+      border-bottom:1px solid lightgrey;
+      background-color: #EDF2F6;
+  }

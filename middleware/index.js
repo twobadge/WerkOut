@@ -1,5 +1,6 @@
 //Yelpcamp middleware
 var Campground = require("../models/campgrounds");
+var Exercise = require("../models/exercises");
 var Comment = require("../models/comment");
 var middlewareObj = {};
     
@@ -7,7 +8,7 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next){
  if(req.isAuthenticated()){
         Campground.findById(req.params.id, function(err, foundCampground){
         if(err){
-          req.flash("error", "Campground not found");
+          req.flash("error", "Workout not found");
           res.redirect("back");
         } else {
             //does the user own the campgrund
@@ -25,13 +26,38 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next){
  }
 }
 
+
+// check exercise ownership
+
+middlewareObj.checkExerciseOwnership = function(req, res, next){ 
+    if(req.isAuthenticated()){
+           Exercise.findById(req.params.id, function(err, foundExercise){
+           if(err){
+             req.flash("error", "Exercise not found");
+             res.redirect("back");
+           } else {
+               //does the user own the campgrund
+             if(foundExercise.author.id.equals(req.user._id)) {
+                  next();
+             } else {
+            req.flash("error", "You don't have permission to do that");
+            res.redirect("back");
+             } 
+           }
+           });
+    } else {
+        req.flash("error", "You need to be logged in to do that");
+        res.redirect("back");
+    }
+   }
+
 middlewareObj.checkCommentOwnership = function(req, res, next) {
  if(req.isAuthenticated()){
         Comment.findById(req.params.comment_id, function(err, foundComment){
            if(err){
                res.redirect("back");
            }  else {
-               // does user own the comment?
+               // does user own the exercise?
             if(foundComment.author.id.equals(req.user._id)) {
                 next();
             } else {
