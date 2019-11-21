@@ -13,7 +13,8 @@
         <div class="col-12">
           <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
             <input class="exercise-input" name="comment[name]" type="text" placeholder="Exercise Name">
-            <input class="exercise-input" name="comment[notes]" type="text" placeholder="Notes">
+            <label>Notes</label>
+            <input class="input" rows="2" name="comment[notes]" type="textarea">
                <table class="workout-row">
                  <thead class="table-head">
                    <tr>
