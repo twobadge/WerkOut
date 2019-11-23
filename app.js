@@ -16,9 +16,13 @@ var  commentRoutes = require("./routes/comments"),
      exerciseRoutes = require("./routes/exercises"),
      indexRoutes     =require ("./routes/index")
 
+//Checking environment variable
+console.log(process.env.DATABASEURL);
 //environment variables
 var url = process.env.DATABASEURL || "mongodb://localhost/werk_out"
 mongoose.connect(url);    
+
+
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
