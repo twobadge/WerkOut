@@ -207,7 +207,7 @@ table th, td {
   
 
   /* media queries */
-  
+/*   
   @media screen and (max-width: 600px) {
     .content {
       font-size:12px;
@@ -220,7 +220,7 @@ table th, td {
     display:none;
     }
   }
-
+ */
 
   /* Form styles */
 
